@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>mkko120.studio - Home</title>
+
+<!--    Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+<!--    Scripts-->
+    <script src="https://kit.fontawesome.com/f3fc679142.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+
+<div id="container">
+
+	<div id="header"></div>
+
+    <div id="nav">
+        <div class="nav-element" onclick="home()">
+            <a href="#">Home</a>
+        </div>
+        <div class="nav-element">
+            <a href="bot/index.html">Bot</a>
+        </div>
+        <div class="nav-element" onclick="aboutme()">
+            <a href="#" >About Me</a>
+        </div>
+        <div class="nav-element" onclick="contact()">
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <div id="nav-min">
+
+    </div>
+
+    <div id="content">
+        <div id="slider">
+
+        </div>
+        <div class="content-wrapper" id="home">
+            <h1>Hello There!</h1>
+            Welcum to my home page! You should try one of my projects that are listed below!
+            <br>
+            <br>
+            <b>WooCommerceUnlocked Web</b> - Web port of WooCommerce enabling non-premium accounts  -  <a href="https://github.com/mkko120/woominecraft-wp-unlocked"><span class="fab fa-github"></span> GitHub repo</a>
+            <br>
+            <br>
+            <b>WooCommerceUnlocked Java</b> - Java port of WooCommerce enabling modified connections   -   <a href="https://github.com/mkko120/woominecraft-java-unlocked"><span class="fa fa-github"></span> GitHub repo</a>
+            <br>
+            <br>
+            <b>Rozgadany Bot</b>  -  Discord.js v13-based discord bot made my me  -  <a href="https://github.com/mkko120-studio/rozgadany-bot"><span class="fa fa-github"></span>   GitHub repo</a>
+        </div>
+
+        <div class="content-wrapper" id="aboutme">
+            <h1>aboutme</h1>
+        </div>
+
+        <div class="content-wrapper" id="something">
+            <h1>something</h1>
+        </div>
+
+        <div class="content-wrapper" id="contact">
+            <h1>contact</h1>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="footer">
+    <a href="https://github.com/mkko120"><i class="fab fa-github"></i> Github</a>
+
+</div>
+
+</body>
+
+<script>
+    function home() {
+        $(document).prop('title', "mkko120.studio - Home");
+        $("#aboutme").fadeOut("normal", function () {
+            $("#something").fadeOut("normal", function () {
+                $("#contact").fadeOut("normal", function () {
+                    $("#home").fadeIn("normal");
+                });
+            });
+        });
+    }
+    function aboutme() {
+        $(document).prop('title', "mkko120.studio - About me");
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'html/aboutme.html');
+        xhr.onload = function() {
+            $("#home").fadeOut("normal", function () {
+                $("#something").fadeOut("normal", function () {
+                    $("#contact").fadeOut("normal", function () {
+                        document.getElementById('aboutme').innerHTML = xhr.responseText;
+                        $("#aboutme").fadeIn("normal");
+                    });
+                });
+            });
+        };
+        xhr.send();
+    }
+    function contact() {
+        $(document).prop('title', "mkko120.studio - Contact");
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'html/contact.html');
+        xhr.onload = function() {
+            $("#home").fadeOut('normal', function () {
+                $("#something").fadeOut('normal', function () {
+                    $("#aboutme").fadeOut('normal', function () {
+                        document.getElementById('contact').innerHTML = xhr.responseText;
+                        $("#contact").fadeIn("normal");
+                    });
+                });
+            });
+        }
+        xhr.send();
+    }
+</script>
+</html>

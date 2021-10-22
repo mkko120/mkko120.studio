@@ -1,0 +1,174 @@
+body {
+    margin: 0 !important;
+    background-color: rgb(18, 38, 56);
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    font-family: 'Lato';
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+#container {
+    color: white;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: -2px;
+    min-height: 500px;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1245 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(42, 94, 141, 0.99)" d="M 0 405 C 131 405 131 327 262 327 L 262 327 L 262 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(42, 94, 141, 0.99)" d="M 261 327 C 497.5 327 497.5 218 734 218 L 734 218 L 734 0 L 261 0 Z" stroke-width="0"></path> <path fill="rgba(42, 94, 141, 0.99)" d="M 733 218 C 989 218 989 80 1245 80 L 1245 80 L 1245 0 L 733 0 Z" stroke-width="0"></path></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 1244px) {
+    #container {
+        background-size: contain;
+    }
+}
+
+#header {
+
+}
+
+#nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: rgba(14, 15, 15, 0.9);
+    width: 40vw;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+}
+
+#nav .nav-element {
+    float: left;
+    padding: 9px 10px 11px 10px;
+    width: auto;
+ }
+
+#content {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.content-wrapper {
+    background: rgba(42, 94, 141, 0.8);
+    min-height: 20vw;
+    width: 80vw;
+
+    margin: auto;
+    border-radius: 20px;
+
+    text-align: center;
+    padding: 15px 20px 15px 20px;
+ }
+
+#home {
+    display: block;
+}
+
+#something {
+    display: none;
+}
+
+#aboutme {
+    display: none;
+}
+
+#contact {
+    display: none;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: table;
+    text-align: center;
+    background: rgba(14, 15, 15, 0.9);
+    border-radius: 10px;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 700px) {
+
+    #nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        float: top;
+        border-radius: 0 0 10px 10px;
+    }
+
+    #content {
+        padding-top: 180px
+    }
+
+    #footer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: 0;
+        float: top;
+        border-radius: 0 0 10px 10px;
+    }
+
+}
+
+#nav-min {
+    display: none;
+}
+
+@media screen and (max-width: 450px) {
+
+    #nav {
+        display: none;
+    }
+
+    #nav-min {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        float: top;
+        border-radius: 0 0 10px 10px;
+    }
+
+    #content {
+        padding-top: 30px;
+    }
+
+    #footer {
+
+    }
+
+}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Loading...</title>
+    <!--    Styles-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!--    Scripts-->
+        <script src="https://kit.fontawesome.com/f3fc679142.js" crossorigin="anonymous"></script>
+        <script src="js/query-3.6.0.js" crossorigin="anonymous"></script>
+        <script src="js/scrollreveal.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>
+    </head>
+    <body>
+        <div id="svg-bg"></div>
+        <div id="container">
+            <div class="loader"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div></div>
+            <div id="content"></div>
+        </div>
+    </body>
+
+    <script>
+        $(function () {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'html/content.html')
+            xhr.onload = function() { $('#content').append(xhr.responseText); }
+            xhr.send()
+        })
+        $(window).on("load", function() {
+            setTimeout(() => {
+                $(".loader").fadeOut("slow", function() { $("#svg-bg").fadeIn("slow", function() { $("#content").fadeIn("fast"); }); document.title = "Rozgadany-bot -- home" });
+            }, 0)
+            ScrollReveal().reveal('.scroll');
+        })
+    </script>
+</html>
